@@ -114,7 +114,7 @@ void Ordenate :: ShellSort(){
 			
 			aux = data[i];
 
-			for(int j = i; j >= hiatus && data[j - hiatus] > aux; j-=hiatus){
+			for( j = i; j >= hiatus && data[j - hiatus] > aux; j-=hiatus){
 				data[j] = data[j- hiatus];
 				swap++;
 			}
