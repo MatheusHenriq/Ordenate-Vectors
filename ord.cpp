@@ -105,26 +105,35 @@ void Ordenate :: SelectionSort(){
 
 void Ordenate :: ShellSort(){
 	
-	int aux,j;
+	iint i,j,aux;
+	int hiatus = 1;
 	int swap 	= 0;
-
-	for(int hiatus = dim/2; hiatus > 0; hiatus /=2){
-		
-		for(int i = hiatus; i < dim; i++){
-			
-			aux = data[i];
-
-			for( j = i; j >= hiatus && data[j - hiatus] > aux; j-=hiatus){
-				data[j] = data[j- hiatus];
-				swap++;
-			}
-		}
 	
-		data[j] = aux;
 
+	while(hiatus < dim){
+		hiatus = 3*hiatus + 1;
 	}
+	
+	while(hiatus > 0){
+			
+		for(i = hiatus; i < dim; i++){
+			aux = data[i];
+			j = i ;
+			while(j > hiatus-1 && aux < data[j-hiatus]){
+	
+				data[j] = data[j-hiatus];
+				j -= hiatus;
+				swap++;	
+			}
+		
+			data[j] = aux;	
+		}
+		hiatus/=3;
+	}
+	
 
 	std::cout<<"swap = "<<swap<<std::endl;
+
 
 }
 
