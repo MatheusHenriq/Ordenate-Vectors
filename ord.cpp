@@ -105,7 +105,7 @@ void Ordenate :: SelectionSort(){
 
 void Ordenate :: ShellSort(){
 	
-	iint i,j,aux;
+	int i,j,aux;
 	int hiatus = 1;
 	int swap 	= 0;
 	
